@@ -18,6 +18,10 @@
     {
       "source": "/(styles.css|main.js|favicon.svg)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }]
+    },
+    {
+      "source": "/(terms.html|privacy-policy.html)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
     }
   ]
 }
