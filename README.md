@@ -10,7 +10,7 @@ index.html            página principal, secciones ancladas
 terms.html             Términos y Condiciones de Uso (versión preliminar)
 privacy-policy.html    Política de Tratamiento de Datos Personales — Ley 1581 (versión preliminar)
 styles.css             tokens de marca y estilos, incluidos los de las páginas legales
-main.js                revelado al hacer scroll, dibujo de la línea de ruta, barra superior
+main.js                revelado al hacer scroll, línea de ruta, barra superior, mapa del viaje, teléfono del hero y mini-mapa de operación
 favicon.svg
 vercel.json            cabeceras de seguridad y caché
 ```
@@ -38,6 +38,19 @@ Paleta heredada de la marca, verificada contra WCAG AA: espresso sobre crema 14,
 sobre crema 10,1:1 · `amber-ink` sobre crema 7,9:1 · crema sobre espresso 14,8:1 · ámbar sobre
 espresso 7,6:1. El ámbar puro **no** se usa como texto sobre fondo claro, donde da 1,9:1; para eso
 existe `--amber-ink`.
+
+Tres ilustraciones animadas, en SVG y JS planos (sin Mapbox, sin token, sin dependencias):
+
+- **Mapa del viaje** (`.route-map`, en "Cómo funciona"): fijo junto a los cuatro pasos; el estado
+  (`data-step`) sigue el scroll y el taxi se mueve sobre un recorrido de calles esquemático.
+- **Teléfono del hero** (`.phone`): tres pantallas de la app del pasajero que rotan. La tarifa se
+  muestra como `$ ••••` porque la tarifa oficial aún no existe.
+- **Mini-mapa de operación** (`.ops`, banda de empresas): conductores disponibles, en servicio y fuera
+  de turno, y una cola de solicitudes de ejemplo.
+
+Las tres están rotuladas como "ilustración esquemática": no usan coordenadas reales ni cifras, y no
+representan un mapa de ningún municipio. Un mapa real con Mapbox exigiría ADR, token `pk.` restringido
+y coordenadas verificadas con la empresa (`maps.md`).
 
 Todas las animaciones se desactivan con `prefers-reduced-motion`.
 

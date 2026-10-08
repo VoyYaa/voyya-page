@@ -46,6 +46,7 @@
 
     <main id="contenido">
       <section class="hero" id="inicio">
+        <div class="hero-copy">
         <p class="eyebrow reveal">En fase piloto · aún no abierto al público</p>
         <h1 class="reveal">
           Pedir un taxi en tu municipio<br />
@@ -56,6 +57,51 @@
           cercano de una empresa afiliada del municipio. Ves la tarifa antes de
           aceptar y pagas en efectivo, como siempre.
         </p>
+        </div>
+
+        <figure
+          class="phone reveal"
+          data-screen="1"
+          role="img"
+          aria-label="Ilustración esquemática de la app del pasajero: pide el taxi viendo la tarifa, el sistema busca al conductor más cercano y luego muestra que va en camino."
+        >
+          <div class="phone-body">
+            <div class="phone-notch"></div>
+            <div class="phone-screen phone-screen-1">
+              <p class="phone-kicker">Tu viaje</p>
+              <p class="phone-title">¿A dónde vas?</p>
+              <div class="phone-field">Marca el destino en el mapa</div>
+              <div class="phone-fare">
+                <span>Tarifa cerrada</span>
+                <strong>$ ••••</strong>
+              </div>
+              <div class="phone-button">Pedir taxi</div>
+            </div>
+            <div class="phone-screen phone-screen-2">
+              <p class="phone-kicker">Un momento</p>
+              <p class="phone-title">Buscando al conductor más cercano</p>
+              <div class="phone-radar"><span></span><span></span><i></i></div>
+              <p class="phone-hint">Si no responde, pasamos al siguiente.</p>
+            </div>
+            <div class="phone-screen phone-screen-3">
+              <p class="phone-kicker">Asignado</p>
+              <p class="phone-title">Tu conductor va en camino</p>
+              <div class="phone-driver">
+                <span class="phone-avatar"></span>
+                <span>
+                  <strong>Nombre del conductor</strong>
+                  <small>Placa y modelo del carro</small>
+                </span>
+              </div>
+              <div class="phone-fare">
+                <span>Pagas en efectivo</span>
+                <strong>$ ••••</strong>
+              </div>
+            </div>
+          </div>
+          <figcaption>Ilustración esquemática de la app.</figcaption>
+        </figure>
+
         <div class="hero-meta reveal">
           <div>
             <span class="hero-meta-value">Tarifa cerrada</span>
@@ -83,6 +129,57 @@
           <h2 id="t-como">Cómo funciona un viaje</h2>
           <p>Cuatro pasos. Ni uno más.</p>
         </div>
+
+        <div class="route-layout">
+        <figure class="route-map" data-step="1">
+          <svg
+            viewBox="0 0 400 400"
+            role="img"
+            aria-label="Ilustración esquemática: un pasajero marca su destino, el sistema busca el taxi más cercano, el conductor va por él y lo lleva al destino."
+          >
+            <path
+              class="map-streets"
+              d="M50 0V400M100 0V400M150 0V400M200 0V400M250 0V400M300 0V400M350 0V400M0 50H400M0 100H400M0 150H400M0 200H400M0 250H400M0 300H400M0 350H400"
+            />
+            <rect class="map-park" x="160" y="260" width="80" height="80" rx="10" />
+            <rect class="map-park" x="60" y="110" width="80" height="30" rx="8" />
+            <path
+              class="map-route"
+              id="map-trip-route"
+              d="M100 300V200H300V100"
+              pathLength="1"
+            />
+            <path
+              class="map-approach"
+              id="map-approach-route"
+              d="M150 350H100V300"
+            />
+            <circle class="map-radius" cx="100" cy="300" r="120" />
+            <g class="map-decoy">
+              <circle cx="300" cy="250" r="7" />
+              <circle cx="200" cy="100" r="7" />
+              <circle cx="350" cy="350" r="7" />
+            </g>
+            <g class="map-pickup">
+              <circle cx="100" cy="300" r="14" class="map-pickup-halo" />
+              <circle cx="100" cy="300" r="7" />
+            </g>
+            <g class="map-destination">
+              <path
+                d="M300 100c-10-12-16-19-16-27a16 16 0 0 1 32 0c0 8-6 15-16 27z"
+              />
+              <circle cx="300" cy="73" r="6" />
+            </g>
+            <g class="map-taxi" id="map-taxi">
+              <circle class="map-taxi-ring" r="16" />
+              <rect x="-10" y="-7" width="20" height="14" rx="5" />
+              <rect class="map-taxi-glass" x="-4" y="-4" width="8" height="8" rx="2" />
+            </g>
+          </svg>
+          <figcaption>
+            Ilustración esquemática, no es un mapa real del municipio.
+          </figcaption>
+        </figure>
 
         <ol class="steps">
           <li class="step reveal">
@@ -129,6 +226,7 @@
             </div>
           </li>
         </ol>
+        </div>
       </section>
 
       <section class="audience" id="para-quien" aria-labelledby="t-quien">
@@ -164,6 +262,39 @@
             parámetros configurables. Das de alta a tus conductores y mantienes
             el control de quién puede trabajar.
           </p>
+          <figure class="ops">
+            <div
+              class="ops-map"
+              role="img"
+              aria-label="Ilustración esquemática de la consola: conductores disponibles, en servicio y fuera de turno sobre el mapa, y una cola de solicitudes."
+            >
+              <svg viewBox="0 0 400 260" aria-hidden="true">
+                <path
+                  class="ops-streets"
+                  d="M50 0V260M130 0V260M210 0V260M290 0V260M370 0V260M0 40H400M0 100H400M0 160H400M0 220H400"
+                />
+                <path class="ops-lane" id="ops-lane-1" d="M50 40H290V100" />
+                <path class="ops-lane" id="ops-lane-2" d="M130 220V100H370" />
+                <path class="ops-lane" id="ops-lane-3" d="M370 40V160H210" />
+                <circle class="ops-driver ops-driver-available" id="ops-driver-1" r="8" />
+                <circle class="ops-driver ops-driver-on-trip" id="ops-driver-2" r="8" />
+                <circle class="ops-driver ops-driver-available" id="ops-driver-3" r="8" />
+                <circle class="ops-driver ops-driver-off" cx="50" cy="220" r="8" />
+                <circle class="ops-request" cx="290" cy="160" r="6" />
+              </svg>
+              <ul class="ops-legend">
+                <li class="ops-legend-available">Disponible</li>
+                <li class="ops-legend-on-trip">En servicio</li>
+                <li class="ops-legend-off">Fuera de turno</li>
+              </ul>
+            </div>
+            <ol class="ops-queue" aria-hidden="true">
+              <li data-state="open"><span>Solicitud nueva</span><em>Pendiente de asignación</em></li>
+              <li data-state="offered"><span>Solicitud</span><em>Ofrecida al más cercano</em></li>
+              <li data-state="done"><span>Solicitud</span><em>Asignada</em></li>
+            </ol>
+            <figcaption>Ilustración esquemática de la consola.</figcaption>
+          </figure>
         </div>
       </section>
 
