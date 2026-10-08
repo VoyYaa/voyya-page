@@ -50,30 +50,32 @@ y desde la sección de estado del índice.
 Los dos documentos llevan `<meta name="robots" content="noindex">` mientras estén en esta etapa: son
 públicos y legibles, pero no deben indexarse como si fueran la versión definitiva.
 
-El bloque de identificación del Responsable del Tratamiento (razón social, NIT, domicilio, correo de
-habeas data) usa marcadores visualmente destacados (`.legal-placeholder-box`, con la etiqueta
-"Completar antes de publicar") en vez de datos inventados — el concepto legal de VoyYa sigue abierto
-(Fase 0, ver `CLAUDE.md`). **Estos marcadores deben completarse antes de que cualquiera de los dos
-documentos se considere publicable de verdad.** El resto de cada documento describe el sistema real
-(qué guarda, para qué, con qué proveedores, con qué medidas de seguridad) y no tiene marcadores
-pendientes.
+**Actualizado 2026-10-08 (ciclo Cierre del MVP).** El bloque de identificación del Responsable del
+Tratamiento ya tiene domicilio y correo de habeas data; el **NIT figura como "en trámite"** (resaltado con
+`.legal-todo`) y se completará cuando exista — eso exigirá publicar una versión nueva del aviso de ubicación
+(`location-notice-v3`) y pedir de nuevo el consentimiento. El correo que figura hoy es personal; el
+institucional está pendiente. Los plazos de conservación (13 horas para la posición del conductor, 90 días
+para las coordenadas exactas de los viajes) **están pendientes de validación por un asesor legal**. La
+versión del aviso que cita la política debe coincidir con `LOCATION_NOTICE_VERSION` del contrato
+(`location-notice-v2` hoy). Las páginas siguen siendo versión preliminar, sin efectos, hasta la revisión
+jurídica.
 
 Ambos documentos declaran con honestidad los puntos que **hoy no están implementados en el
-sistema** en vez de prometerlos: no hay plazo de retención definido ni supresión automatizada de
-datos (excepto la purga de ubicación del conductor), los derechos del titular se ejercen por un
-canal humano por correo — no hay autogestión en la app —, no existe todavía la casilla de
-autorización explícita al registrarse, y las transmisiones internacionales a los proveedores
-(Railway, Twilio, SendGrid, Mapbox) están declaradas pero sin el contrato de transmisión formalizado
-todavía. Ver el detalle en `docs/security/cumplimiento-ley1581.md` y
-`docs/security/reporte-afiliacion-empresas.md` (hallazgos C-05, C-06, C-10) del repo `Yavoy`.
+sistema** en vez de prometerlos: para los datos que no son de ubicación no hay plazo de retención con
+borrado automático, los derechos del titular se ejercen por un canal humano por correo — no hay
+autogestión en la app (salvo dejar de compartir la ubicación) —, y las transmisiones internacionales a
+los proveedores (Railway, Twilio, SendGrid, Mapbox) están declaradas pero sin el contrato de
+transmisión formalizado todavía. Ver el detalle en `docs/security/cumplimiento-ley1581.md`,
+`docs/security/reporte-afiliacion-empresas.md` (hallazgos C-05, C-06, C-10) y
+`docs/security/reporte-cierre-mvp.md` del repo `Yavoy`.
 
 ## Pendiente
 
-- **Revisión jurídica** de `terms.html` y `privacy-policy.html`, y completar el bloque de
-  identificación del Responsable del Tratamiento antes de que dejen de ser una versión preliminar.
-- **Registro de la autorización de datos** en la aplicación (casilla no premarcada + versión del
-  aviso, según `docs/security/cumplimiento-ley1581.md` ítem 2): hoy la política la describe, pero el
-  mecanismo de captura en el producto todavía no existe.
+- **Revisión jurídica** de `terms.html` y `privacy-policy.html`, el NIT definitivo y el correo
+  institucional de habeas data antes de que dejen de ser una versión preliminar.
+- **Autorización general** de tratamiento de datos: el consentimiento que existe en las apps (versionado,
+  revocable, con registro inmutable) cubre solo la **ubicación**; la autorización general sigue pendiente
+  (`docs/security/cumplimiento-ley1581.md` ítem 2).
 - El sitio describe el producto en presente porque describe lo que el producto hace, pero deja claro
   que el servicio **no está abierto al público** y que las aplicaciones **no están publicadas**.
   Mantener esa distinción es importante mientras el piloto siga en preparación.
