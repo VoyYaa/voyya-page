@@ -42,7 +42,8 @@
           Política de Tratamiento de Datos Personales
         </h1>
         <p class="legal-meta">
-          Última edición: 25 de septiembre de 2026. Elaborada conforme a la
+          Última actualización: 8 de octubre de 2026 (versión del aviso de
+          ubicación en las aplicaciones: location-notice-v2). Elaborada conforme a la
           Ley 1581 de 2012 y al Decreto 1377 de 2013 de la República de
           Colombia. Aplica a los datos personales tratados a través de la
           plataforma VoyYa: las aplicaciones de pasajero y conductor, la
@@ -58,11 +59,13 @@
             el proyecto avanza. No tiene efectos vinculantes y no rige ningún
             tratamiento de datos real hasta que el piloto de VoyYa esté listo
             para recibir usuarios, momento en el que se reemplazará por la
-            versión definitiva. Los datos de identificación del Responsable
-            del Tratamiento aparecen como marcadores pendientes de completar
-            (por ejemplo <mark class="legal-todo">[NIT]</mark>) y se
-            deben llenar, con su respectivo NIT, domicilio y correo de
-            contacto, antes de publicar este documento en producción.
+            versión definitiva. Ya están completos el domicilio y el correo
+            de habeas data del Responsable del Tratamiento; el
+            <mark class="legal-todo">NIT está en trámite</mark> y se
+            incluirá en cuanto exista. Además, los plazos de conservación
+            descritos en la sección 8 (en particular los 90 días de las
+            coordenadas de los viajes) están pendientes de validación por
+            un asesor legal.
           </p>
         </div>
 
@@ -111,25 +114,26 @@
                 descritos en esta política es:
               </p>
               <div class="legal-placeholder-box">
-                <span class="legal-placeholder-flag"
-                  >Completar antes de publicar</span
-                >
                 <dl>
                   <div>
                     <dt>Razón social</dt>
-                    <dd>VoyYa S.A.S</dd>
+                    <dd>VoyYa S.A.S.</dd>
                   </div>
                   <div>
                     <dt>NIT</dt>
-                    <dd>[NIT]</dd>
+                    <dd><mark class="legal-todo">NIT en trámite</mark></dd>
                   </div>
                   <div>
                     <dt>Domicilio</dt>
-                    <dd>[DOMICILIO]</dd>
+                    <dd>Calle 38B Sur # 45B-31</dd>
                   </div>
                   <div>
                     <dt>Correo de habeas data</dt>
-                    <dd>[CORREO DE HABEAS DATA]</dd>
+                    <dd>
+                      <a href="mailto:jhonnier98t@gmail.com"
+                        >jhonnier98t@gmail.com</a
+                      >
+                    </dd>
                   </div>
                 </dl>
               </div>
@@ -137,8 +141,8 @@
                 Estos datos identifican a la persona jurídica responsable de
                 decidir para qué se tratan los datos personales que recolecta
                 VoyYa y ante quién puedes ejercer los derechos descritos en
-                esta política. Esta política no puede publicarse en
-                producción sin completarlos.
+                esta política. El NIT todavía no ha sido asignado a la
+                sociedad; lo publicaremos aquí cuando lo tengamos.
               </p>
             </section>
 
@@ -210,17 +214,63 @@
                     </tr>
                     <tr>
                       <td>
-                        Ubicación del dispositivo (última posición conocida)
+                        Ubicación del teléfono (GPS, con una precisión de
+                        hasta 100 metros) y puntos de recogida y destino de
+                        cada viaje
+                      </td>
+                      <td>Pasajero</td>
+                      <td>
+                        Comprobar que estás dentro de la zona de servicio,
+                        ubicarte en el mapa, calcular tu tarifa y el tiempo
+                        estimado, y darle tu punto de recogida al conductor.
+                        La ubicación se lee solo mientras la aplicación está
+                        abierta; no la seguimos en segundo plano. Compartir
+                        el GPS es voluntario: si no lo compartes, puedes
+                        pedir tu taxi marcando el punto de recogida a mano en
+                        el mapa. No guardamos la ubicación del teléfono por
+                        sí sola: guardamos los puntos de recogida y destino
+                        de cada viaje.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Ubicación del dispositivo (última posición conocida,
+                        con una precisión de hasta 100 metros)
                       </td>
                       <td>Conductor</td>
                       <td>
-                        Determinar cuál es el conductor disponible más
-                        cercano al que ofrecer cada solicitud, y calcular un
-                        tiempo estimado de llegada. No hacemos seguimiento
-                        continuo de tu recorrido: la posición se recoge de
-                        forma puntual mientras estás en turno y se elimina
-                        automáticamente después de un período de inactividad
-                        o al terminar tu turno.
+                        Ofrecerte primero los viajes más cercanos, calcular
+                        el tiempo estimado de llegada que ve el pasajero y
+                        que tu empresa vea si tu ubicación está al día
+                        durante el turno. Compartirla es voluntario; sin
+                        ella no puedes ponerte en turno ni recibir viajes.
+                        No hacemos seguimiento continuo ni en segundo plano
+                        y no guardamos historial: solo se conserva tu última
+                        posición, que se elimina según la sección 8.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Identificador de notificaciones del dispositivo
+                        (token de notificaciones push)
+                      </td>
+                      <td>Conductor</td>
+                      <td>
+                        Avisarte en tu teléfono cuando se te ofrece un viaje
+                        (sección 9).
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Registro de autorizaciones (qué texto del aviso de
+                        ubicación aceptaste o revocaste, en qué versión y en
+                        qué fecha)
+                      </td>
+                      <td>Pasajero y conductor</td>
+                      <td>
+                        Poder demostrarte, y demostrar ante la autoridad, que
+                        diste tu autorización y con qué texto, y que la
+                        revocación se respetó.
                       </td>
                     </tr>
                     <tr>
@@ -288,10 +338,9 @@
                       <td>Registros técnicos de uso de la aplicación</td>
                       <td>Cualquier usuario</td>
                       <td>
-                        Detectar errores, mantener la seguridad del sistema y
-                        entender el funcionamiento general del servicio. No
-                        registramos el contenido de tus mensajes ni tu
-                        ubicación exacta en estos registros.
+                        Detectar errores y mantener la seguridad del sistema. No registramos tu
+                        ubicación exacta ni datos personales como tu nombre o
+                        tu teléfono en estos registros.
                       </td>
                     </tr>
                   </tbody>
@@ -312,22 +361,54 @@
                 conductor por una empresa afiliada, o al enviar una solicitud
                 de afiliación como empresa, autorizas el tratamiento de tus
                 datos personales para las finalidades descritas en la sección
-                anterior. Estamos completando, dentro de la aplicación y del
-                formulario de afiliación, el mecanismo para que esa
-                autorización quede registrada de forma explícita y
-                verificable en el momento del registro; mientras eso avanza,
-                esta política describe con precisión el alcance del
-                tratamiento que ya realizamos y el canal para que ejerzas tus
-                derechos en cualquier momento.
+                anterior.
               </p>
               <p>
-                Puedes revocar tu autorización cuando quieras escribiendo al
-                correo de la sección <a href="#procedimiento">Cómo ejercer
+                Para la ubicación, antes de leerla las aplicaciones de
+                pasajero y de conductor te muestran un aviso con quién trata
+                tus datos, qué usamos, para qué, si es voluntario, con quién
+                se comparte, cuánto se guarda y cómo dejar de compartirla. Tu
+                aceptación queda registrada con la versión del aviso, su
+                texto y la fecha, y la revocación queda registrada como un
+                asiento aparte, sin borrar el anterior. La versión vigente
+                del aviso es <strong>location-notice-v2</strong>. Para el
+                formulario de afiliación de empresas y para los datos del
+                conductor que carga su empresa, el mecanismo de autorización
+                explícita se describe en la sección 7.
+              </p>
+              <p>
+                <strong>Revocar desde la aplicación.</strong> En la pantalla
+                «Privacidad de mi ubicación»:
+              </p>
+              <ul>
+                <li>
+                  <strong>Conductor</strong>, con «Dejar de compartir mi
+                  ubicación»: borramos tu última ubicación al instante y sales
+                  de turno. Si tienes un viaje en curso, el viaje sigue y
+                  sales de turno al terminarlo. Para volver a turno tendrás
+                  que aceptar el aviso otra vez. Si en cambio quitas el
+                  permiso en los ajustes del teléfono, dejamos de recibir tu
+                  ubicación y la que quedó guardada se borra a más tardar 13
+                  horas después de tu último reporte.
+                </li>
+                <li>
+                  <strong>Pasajero</strong>, con «Dejar de usar mi
+                  ubicación»: dejamos de leer tu GPS desde ese momento y
+                  marcarás tu punto de recogida en el mapa. Un viaje en curso
+                  sigue igual. Tus viajes anteriores no se borran por esto:
+                  sus coordenadas exactas se eliminan según la sección 8, y
+                  puedes pedir que se eliminen antes escribiendo al correo de
+                  habeas data.
+                </li>
+              </ul>
+              <p>
+                También puedes revocar tu autorización, en general, escribiendo
+                al correo de la sección <a href="#procedimiento">Cómo ejercer
                 tus derechos</a>. Ten en cuenta que revocarla puede significar
                 que no podamos seguir prestándote el servicio: por ejemplo,
-                sin tu ubicación no podemos asignarte un conductor cercano, y
-                sin los documentos del conductor no podemos mantener activa
-                su habilitación dentro de la plataforma.
+                sin tu ubicación un conductor no puede ponerse en turno, y sin
+                los documentos del conductor no podemos mantener activa su
+                habilitación dentro de la plataforma.
               </p>
             </section>
 
@@ -375,26 +456,58 @@
             <section class="legal-section" id="conservacion">
               <h2>8. Conservación de los datos</h2>
               <p>
-                Hoy no tenemos definido un plazo fijo de conservación para
-                cada tipo de dato, ni un mecanismo automatizado que los
-                elimine al vencerse ese plazo; es un punto que estamos
-                trabajando antes de recibir usuarios reales del piloto. Lo
-                decimos con esa claridad porque preferimos que sepas
-                exactamente en qué estado está esto, en lugar de prometer un
-                plazo que hoy no aplicamos.
+                Para la ubicación tenemos plazos fijos y borrado automático;
+                para el resto de los datos todavía no hemos definido un plazo
+                con borrado automático, y preferimos decírtelo con claridad
+                en lugar de prometer algo que hoy no aplicamos.
+              </p>
+              <ul>
+                <li>
+                  <strong>Ubicación del conductor:</strong> guardamos solo la
+                  última posición, no un historial. Se borra cuando cierras
+                  turno; si no lo cierras, se borra a más tardar
+                  <strong>13 horas</strong> después de tu último reporte.
+                  Revocar desde la aplicación la borra al instante y te saca
+                  de turno (sección 5).
+                </li>
+                <li>
+                  <strong>Ubicación del pasajero:</strong> no guardamos la
+                  ubicación del teléfono por sí sola. Guardamos los puntos de
+                  recogida y destino de cada viaje; sus coordenadas exactas y
+                  direcciones se eliminan cuando el viaje cumple
+                  <strong>90 días</strong>. El borrado corre una vez al día,
+                  así que ocurre a más tardar el día 91. Solo se borran
+                  viajes ya terminados.
+                </li>
+                <li>
+                  <strong>Viaje, tarifa y comisión:</strong> se conservan,
+                  junto con los totales de conciliación, para atender
+                  obligaciones contables. No incluyen las coordenadas
+                  exactas una vez cumplido el plazo anterior.
+                </li>
+                <li>
+                  <strong>Registro de autorizaciones:</strong> se conserva
+                  para poder probar qué aceptaste o revocaste y cuándo.
+                </li>
+              </ul>
+              <p>
+                <strong>Copias de seguridad.</strong> Nuestro proveedor de
+                alojamiento (Railway) mantiene copias de seguridad de la
+                base de datos. Los datos que ya borramos de la base activa
+                pueden permanecer en esas copias, y en los registros
+                internos del motor de base de datos, hasta que el proveedor
+                las rote según su propia política.
               </p>
               <p>
-                Mientras ese mecanismo se define e implementa, aplicamos el
-                siguiente criterio de conservación: guardamos tus datos
-                personales <strong>mientras la relación que los originó esté
-                vigente</strong> —tu cuenta de pasajero, tu vinculación como
-                conductor a una empresa afiliada, o la afiliación activa de
-                una empresa— y, adicionalmente, durante el tiempo que sea
-                necesario para atender obligaciones legales, contables o de
-                auditoría relacionadas con el servicio prestado. La única
-                excepción es la ubicación del conductor, que sí tiene una
-                purga automática: se elimina tras un período corto de
-                inactividad, sin necesidad de que nadie lo solicite.
+                Para el resto de los datos personales aplicamos este
+                criterio: los guardamos <strong>mientras la relación que los
+                originó esté vigente</strong> —tu cuenta de pasajero, tu
+                vinculación como conductor a una empresa afiliada, o la
+                afiliación activa de una empresa— y, adicionalmente, durante
+                el tiempo que sea necesario para atender obligaciones
+                legales, contables o de auditoría relacionadas con el
+                servicio prestado. Los plazos de 13 horas y 90 días están
+                pendientes de validación por un asesor legal.
               </p>
               <p>
                 Si quieres que suprimamos o anonimicemos tus datos antes de
@@ -425,8 +538,8 @@
                 </li>
                 <li>
                   <strong>Twilio</strong> — envía los mensajes de texto (SMS)
-                  con tu código de verificación como pasajero o el PIN de
-                  acceso del conductor.
+                  con tu código de verificación como pasajero o el PIN
+                  temporal de acceso del conductor.
                 </li>
                 <li>
                   <strong>SendGrid</strong> (producto de correo de Twilio) —
@@ -435,9 +548,21 @@
                   solicitud de documentos, credenciales de acceso).
                 </li>
                 <li>
-                  <strong>Mapbox</strong> — provee los mapas, el cálculo de
-                  rutas y la geocodificación de direcciones que usa la
-                  aplicación.
+                  <strong>Mapbox</strong> — dibuja el mapa en la aplicación del
+                  pasajero. Para dibujarlo puede recibir la zona del mapa que
+                  estás mirando, que puede coincidir con tu ubicación. La
+                  telemetría del SDK de Mapbox está desactivada. No usamos
+                  Mapbox para buscar direcciones.
+                </li>
+                <li>
+                  <strong>Expo Push Notifications</strong> y
+                  <strong>Firebase Cloud Messaging</strong> (Google) —
+                  entregan en el teléfono del conductor la notificación de
+                  un viaje que se le ofrece. Reciben el identificador de
+                  notificaciones del dispositivo y el contenido de la
+                  notificación. Cuando publiquemos la aplicación para iOS,
+                  se usará también el servicio de notificaciones de Apple
+                  (APNs); hoy no está en uso.
                 </li>
                 <li>
                   <strong>Sentry</strong> — lo usamos para el monitoreo
@@ -468,6 +593,16 @@
                 Unión Europea; estamos revisando, como parte de esa misma
                 tarea pendiente, si eso simplifica el sustento legal de la
                 transmisión, sin darlo todavía por resuelto.
+              </p>
+              <p>
+                <strong>Quién ve qué dentro del servicio.</strong> Los
+                conductores a quienes se les ofrece un viaje ven el punto de
+                recogida y el barrio de destino; el que lo acepta ve además
+                el destino y el número de teléfono del pasajero mientras
+                dura el viaje. La empresa de taxis que atiende el viaje
+                también ve los puntos de recogida y destino. De la ubicación
+                del conductor, su empresa solo ve si está al día, no dónde
+                está, y el pasajero solo ve el tiempo estimado de llegada.
               </p>
               <p>
                 No vendemos tus datos personales a nadie, ni los usamos con
@@ -554,7 +689,7 @@
               <p>
                 Puedes ejercer cualquiera de los derechos anteriores
                 escribiendo al correo
-                <strong>[CORREO DE HABEAS DATA]</strong> (ver la
+                <a href="mailto:jhonnier98t@gmail.com"><strong>jhonnier98t@gmail.com</strong></a> (ver la
                 identificación completa del Responsable en la sección 2),
                 indicando tu nombre completo, el número de teléfono o correo
                 con el que usas VoyYa, y una descripción clara de lo que
@@ -638,9 +773,9 @@
                 Para cualquier pregunta sobre esta política que no sea una
                 consulta o un reclamo formal, puedes escribirnos a
                 <a href="mailto:jhonnier98t@gmail.com">jhonnier98t@gmail.com</a
-                >. Para ejercer tus derechos como titular de datos
-                personales, usa el correo de habeas data identificado en la
-                sección 2 y descrito en la sección
+                >, que es también el correo de habeas data identificado en la
+                sección 2. Para ejercer tus derechos como titular de datos
+                personales, sigue lo descrito en la sección
                 <a href="#procedimiento">Cómo ejercer tus derechos</a>.
               </p>
             </section>
