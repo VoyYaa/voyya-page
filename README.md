@@ -64,7 +64,7 @@ Los dos documentos llevan `<meta name="robots" content="noindex">` mientras est�
 públicos y legibles, pero no deben indexarse como si fueran la versión definitiva.
 
 **Actualizado 2026-10-08 (ciclo Cierre del MVP).** El bloque de identificación del Responsable del
-Tratamiento ya tiene domicilio y correo de habeas data; el **NIT figura como "en trámite"** (resaltado con
+Tratamiento ya tiene domicilio y correo de habeas data; el responsable es el fundador como **persona natural** (sin sociedad por ahora; el "NIT en trámite" se retiró el 2026-11-19; antes resaltado con
 `.legal-todo`) y se completará cuando exista — eso exigirá publicar una versión nueva del aviso de ubicación
 (`location-notice-v3`) y pedir de nuevo el consentimiento. El correo que figura hoy es personal; el
 institucional está pendiente. Los plazos de conservación (13 horas para la posición del conductor, 90 días
