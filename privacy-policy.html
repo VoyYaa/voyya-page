@@ -42,8 +42,8 @@
           Política de Tratamiento de Datos Personales
         </h1>
         <p class="legal-meta">
-          Última actualización: 8 de octubre de 2026 (versión del aviso de
-          ubicación en las aplicaciones: location-notice-v2). Elaborada conforme a la
+          Última actualización: 19 de noviembre de 2026 (versión del aviso de
+          ubicación en las aplicaciones: location-notice-v3). Elaborada conforme a la
           Ley 1581 de 2012 y al Decreto 1377 de 2013 de la República de
           Colombia. Aplica a los datos personales tratados a través de la
           plataforma VoyYa: las aplicaciones de pasajero y conductor, la
@@ -228,8 +228,10 @@
                       <td>
                         Comprobar que estás dentro de la zona de servicio,
                         ubicarte en el mapa, calcular tu tarifa y el tiempo
-                        estimado, y darle tu punto de recogida al conductor.
-                        La ubicación se lee solo mientras la aplicación está
+                        estimado, darle tu punto de recogida al conductor y
+                        mostrarte en el mapa dónde viene tu conductor desde
+                        que acepta tu viaje hasta que lo inicia. La ubicación
+                        de tu teléfono se lee solo mientras la aplicación está
                         abierta; no la seguimos en segundo plano. Compartir
                         el GPS es voluntario: si no lo compartes, puedes
                         pedir tu taxi marcando el punto de recogida a mano en
@@ -240,30 +242,58 @@
                     </tr>
                     <tr>
                       <td>
-                        Ubicación del dispositivo (última posición conocida,
-                        con una precisión de hasta 100 metros)
+                        Ubicación del dispositivo (con una precisión de hasta
+                        100 metros)
                       </td>
                       <td>Conductor</td>
                       <td>
                         Ofrecerte primero los viajes más cercanos, calcular
-                        el tiempo estimado de llegada que ve el pasajero y
-                        que tu empresa vea si tu ubicación está al día
-                        durante el turno. Compartirla es voluntario; sin
-                        ella no puedes ponerte en turno ni recibir viajes.
-                        No hacemos seguimiento continuo ni en segundo plano
-                        y no guardamos historial: solo se conserva tu última
+                        el tiempo estimado de llegada, que el pasajero de
+                        cada viaje que aceptas vea en un mapa dónde vienes
+                        mientras llega a recogerlo y que tu empresa vea si tu
+                        ubicación está al día durante el turno. Mientras
+                        estás en turno se lee con la aplicación abierta.
+                        <strong>Desde que aceptas un viaje hasta que lo
+                        inicias, la enviamos cada 10 a 15 segundos; en
+                        Android sigue aunque VoyYa no esté en pantalla, con
+                        una notificación visible de VoyYa</strong> (en
+                        iPhone, solo con la aplicación en pantalla). Al
+                        iniciar el viaje dejamos de compartirla, y fuera de
+                        esa ventana no la seguimos en segundo plano. No
+                        hacemos seguimiento continuo durante el viaje y no
+                        guardamos historial ni recorrido: cada envío
+                        reemplaza al anterior y solo se conserva tu última
                         posición, que se elimina según la sección 8.
+                        Compartirla es voluntario, pero sin aceptar el aviso
+                        no puedes ponerte en turno ni recibir viajes, y
+                        durante un viaje no puedes apagar solo el
+                        seguimiento: si no quieres compartirla, no aceptes
+                        el viaje.
                       </td>
                     </tr>
                     <tr>
                       <td>
                         Identificador de notificaciones del dispositivo
-                        (token de notificaciones push)
+                        (token de notificaciones push), con su plataforma
+                        (Android o iPhone) y la fecha en que se vio por
+                        última vez
                       </td>
-                      <td>Conductor</td>
+                      <td>Pasajero y conductor</td>
                       <td>
-                        Avisarte en tu teléfono cuando se te ofrece un viaje
-                        (sección 9).
+                        Pasajero: avisarte en tu teléfono cuando cambia tu
+                        viaje (un conductor aceptó, tu conductor canceló o
+                        indica que llegó, o no hubo conductores). Conductor:
+                        avisarte cuando se te ofrece un viaje, incluso con la
+                        aplicación cerrada. Es voluntario: depende del
+                        permiso de notificaciones de tu teléfono, que puedes
+                        negar o quitar en cualquier momento; sin él el
+                        servicio funciona, pero el pasajero no recibe esos
+                        avisos y el conductor no recibe las ofertas con la
+                        aplicación cerrada. El token queda asociado a tu
+                        cuenta. Los avisos al pasajero llevan un texto fijo,
+                        sin tu nombre, direcciones ni coordenadas. Cómo se
+                        elimina, en la sección 8; quién lo recibe, en la
+                        sección 9.
                       </td>
                     </tr>
                     <tr>
@@ -377,10 +407,17 @@
                 aceptación queda registrada con la versión del aviso, su
                 texto y la fecha, y la revocación queda registrada como un
                 asiento aparte, sin borrar el anterior. La versión vigente
-                del aviso es <strong>location-notice-v2</strong>. Para el
+                del aviso es <strong>location-notice-v3</strong>. Para el
                 formulario de afiliación de empresas y para los datos del
                 conductor que carga su empresa, el mecanismo de autorización
                 explícita se describe en la sección 7.
+              </p>
+              <p>
+                <strong>Notificaciones.</strong> El permiso para recibir
+                notificaciones es aparte y lo controlas tú en los ajustes del
+                teléfono; puedes quitarlo cuando quieras. Al cerrar sesión en
+                la aplicación pedimos que se elimine el token de
+                notificaciones de ese teléfono (sección 8).
               </p>
               <p>
                 <strong>Revocar desde la aplicación.</strong> En la pantalla
@@ -462,7 +499,8 @@
             <section class="legal-section" id="conservacion">
               <h2>8. Conservación de los datos</h2>
               <p>
-                Para la ubicación tenemos plazos fijos y borrado automático;
+                Para la ubicación, el token de notificaciones y el número de
+                verificación tenemos plazos fijos y borrado automático;
                 para el resto de los datos todavía no hemos definido un plazo
                 con borrado automático, y preferimos decírtelo con claridad
                 en lugar de prometer algo que hoy no aplicamos.
@@ -490,6 +528,23 @@
                   junto con los totales de conciliación, para atender
                   obligaciones contables. No incluyen las coordenadas
                   exactas una vez cumplido el plazo anterior.
+                </li>
+                <li>
+                  <strong>Token de notificaciones (pasajero y
+                  conductor):</strong> la aplicación lo elimina al cerrar
+                  sesión, con un plazo corto de espera; si ese aviso no llega
+                  al servidor (por ejemplo, sin conexión), el servidor borra
+                  cada día los tokens que no se han vuelto a ver en un máximo
+                  de <strong>60 días</strong>. También se elimina con tu
+                  cuenta.
+                </li>
+                <li>
+                  <strong>Número con el que se pide un código de
+                  verificación:</strong> para limitar abusos y el envío
+                  masivo de SMS, el servidor conserva ese número, sin el
+                  código, hasta unas <strong>25 horas</strong> y luego lo
+                  borra. Esto es aparte de tu cuenta, que se conserva
+                  mientras la uses.
                 </li>
                 <li>
                   <strong>Registro de autorizaciones:</strong> se conserva
@@ -563,8 +618,9 @@
                 <li>
                   <strong>Expo Push Notifications</strong> y
                   <strong>Firebase Cloud Messaging</strong> (Google) —
-                  entregan en el teléfono del conductor la notificación de
-                  un viaje que se le ofrece. Reciben el identificador de
+                  entregan en el teléfono las notificaciones: al conductor,
+                  la de un viaje que se le ofrece; al pasajero, las de los
+                  cambios de su viaje. Reciben el identificador de
                   notificaciones del dispositivo y el contenido de la
                   notificación. Cuando publiquemos la aplicación para iOS,
                   se usará también el servicio de notificaciones de Apple
@@ -608,7 +664,13 @@
                 dura el viaje. La empresa de taxis que atiende el viaje
                 también ve los puntos de recogida y destino. De la ubicación
                 del conductor, su empresa solo ve si está al día, no dónde
-                está, y el pasajero solo ve el tiempo estimado de llegada.
+                está. El pasajero de cada viaje ve en un mapa dónde viene su
+                conductor, y hace cuánto se tomó esa ubicación, desde que lo
+                acepta hasta que inicia el viaje; después ya no la ve y no
+                guardamos el recorrido. Además, el conductor puede abrir el
+                punto de recogida o el destino en Google Maps o Waze: esas
+                aplicaciones reciben solo las coordenadas, sin nombre ni
+                teléfono, y las tratan según sus propias políticas.
               </p>
               <p>
                 No vendemos tus datos personales a nadie, ni los usamos con
@@ -701,7 +763,10 @@
                 con el que usas VoyYa, y una descripción clara de lo que
                 solicitas. Para pedir la eliminación de tu cuenta, tienes
                 una guía paso a paso en
-                <a href="delete-account.html">Eliminar mi cuenta</a>.
+                <a href="delete-account.html">Eliminar mi cuenta</a>. Hoy no
+                existe esa opción dentro de la aplicación: se está
+                agregando, sin fecha definida, y mientras tanto se pide por
+                correo.
               </p>
               <p>
                 <strong>Hoy atendemos estas solicitudes de forma manual</strong>,
